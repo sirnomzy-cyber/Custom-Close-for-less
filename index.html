@@ -826,6 +826,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 </style>
+<script>
+    (function(w, d, t, u, o) {
+        w[u] = w[u] || [], o.ts = (new Date).getTime();
+        var n = d.createElement(t);
+        n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""),
+        n.async = 1, n.onload = n.onreadystatechange = function() {
+            var s = this.readyState;
+            s && "loaded" !== s && "complete" !== s ||
+            (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"),
+            n.onload = n.onreadystatechange = null)
+        };
+        var i = d.getElementsByTagName(t)[0];
+        i.parentNode.insertBefore(n, i);
+    })(window, document, "script", "uetq", {
+        ti: "97282052",
+        enableAutoSpaTracking: true
+    });
+</script>
+<script>
+function uet_report_conversion() {
+    window.uetq = window.uetq || [];
+    window.uetq.push('event', 'submit_lead_form', {});
+}
+</script>
 </head>
 <body>
 
@@ -1572,6 +1596,7 @@ document.addEventListener('DOMContentLoaded', function () {
             success.textContent = "Thanks! We've received your request and will reach out within 24 hours.";
             success.classList.add('is-visible');
             form.reset();
+            try { uet_report_conversion(); } catch (e) {}
           } else {
             success.textContent = "Something went wrong sending your request. Please call or text us at (954) 408-5828 instead.";
             success.style.color = '#b3261e';
