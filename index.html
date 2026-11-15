@@ -767,11 +767,12 @@ h4, .h4{ font: var(--text-h4); color: var(--neutral-900); }
   margin-top: var(--sp-8);
   padding-top: var(--sp-3);
   border-top: 1px solid rgba(255,255,255,.12);
-  display: flex; justify-content: center; align-items: center;
+  display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px 24px;
   font: var(--text-small);
   text-align: center;
 }
-.footer-bottom a{ color: rgba(255,255,255,.85); }
+.footer-bottom a{ color: rgba(255,255,255,.85); text-decoration: underline; text-underline-offset: 3px; }
+.footer-bottom a:hover{ color: #fff; }
 
 @media (max-width: 900px){
   .footer-grid{ grid-template-columns: 1fr 1fr; }
@@ -1455,6 +1456,7 @@ function uet_report_conversion() {
   </div>
   <div class="container footer-bottom">
     <span>&copy; <span id="year"></span> Custom Closets For Less. All rights reserved.</span>
+    <a href="privacy-policy/">Privacy Policy</a>
   </div>
 </footer>
 
